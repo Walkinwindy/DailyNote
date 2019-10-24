@@ -1,20 +1,18 @@
 package cn.afterturn.easypoi.view;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import cn.afterturn.easypoi.entity.vo.TemplateExcelConstants;
+import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
+import cn.afterturn.easypoi.test.entity.temp.TemplateExcelExportEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import cn.afterturn.easypoi.entity.vo.TemplateExcelConstants;
-import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
-import cn.afterturn.easypoi.test.entity.temp.TemplateExcelExportEntity;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/EasypoiTemplateExcelViewTest")
@@ -24,7 +22,7 @@ public class EasypoiTemplateExcelViewTest {
     public String download(ModelMap modelMap) {
         Map<String, Object> map = new HashMap<String, Object>();
         TemplateExportParams params = new TemplateExportParams(
-            "doc/foreach.xlsx");
+                "doc/foreach.xlsx");
         List<TemplateExcelExportEntity> list = new ArrayList<TemplateExcelExportEntity>();
 
         for (int i = 0; i < 4; i++) {
@@ -67,9 +65,11 @@ public class EasypoiTemplateExcelViewTest {
 
     }
 
-    /**如果上面的方法不行,可以使用下面的用法
+    /**
+     * 如果上面的方法不行,可以使用下面的用法
      * 同样的效果,只不过是直接问输出了,不经过view了
-     * @param map
+     *
+     * @param modelMap
      * @param request
      * @param response
      */
@@ -79,7 +79,7 @@ public class EasypoiTemplateExcelViewTest {
                                       HttpServletResponse response) {
         Map<String, Object> map = new HashMap<String, Object>();
         TemplateExportParams params = new TemplateExportParams(
-            "doc/foreach.xlsx");
+                "doc/foreach.xlsx");
         List<TemplateExcelExportEntity> list = new ArrayList<TemplateExcelExportEntity>();
 
         for (int i = 0; i < 4; i++) {
@@ -119,7 +119,7 @@ public class EasypoiTemplateExcelViewTest {
         modelMap.put(TemplateExcelConstants.PARAMS, params);
         modelMap.put(TemplateExcelConstants.MAP_DATA, map);
         PoiBaseView.render(modelMap, request, response,
-            TemplateExcelConstants.EASYPOI_TEMPLATE_EXCEL_VIEW);
+                TemplateExcelConstants.EASYPOI_TEMPLATE_EXCEL_VIEW);
 
     }
 

@@ -1,25 +1,20 @@
 package cn.afterturn.easypoi.view;
 
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.junit.Test;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import cn.afterturn.easypoi.entity.vo.MapExcelConstants;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.afterturn.easypoi.excel.entity.params.ExcelExportEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author jueyue
  */
@@ -27,7 +22,7 @@ import cn.afterturn.easypoi.excel.entity.params.ExcelExportEntity;
 @RequestMapping("/EasypoiMapExcelViewTest")
 public class EasypoiMapExcelViewTest {
 
-    
+
     @RequestMapping()
     public String download(ModelMap modelMap) {
         List<ExcelExportEntity> entity = new ArrayList<ExcelExportEntity>();
@@ -66,11 +61,13 @@ public class EasypoiMapExcelViewTest {
         return MapExcelConstants.EASYPOI_MAP_EXCEL_VIEW;
 
     }
- 
 
-    /**如果上面的方法不行,可以使用下面的用法
+
+    /**
+     * 如果上面的方法不行,可以使用下面的用法
      * 同样的效果,只不过是直接问输出了,不经过view了
-     * @param map
+     *
+     * @param modelMap
      * @param request
      * @param response
      */

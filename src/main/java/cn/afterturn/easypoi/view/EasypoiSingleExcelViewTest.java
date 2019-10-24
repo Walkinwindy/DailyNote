@@ -1,29 +1,19 @@
 package cn.afterturn.easypoi.view;
 
-import static org.junit.Assert.*;
-
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.junit.Test;
+import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
+import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
+import cn.afterturn.easypoi.test.entity.MsgClient;
+import cn.afterturn.easypoi.test.entity.MsgClientGroup;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
-import cn.afterturn.easypoi.excel.annotation.Excel;
-import cn.afterturn.easypoi.excel.entity.ExportParams;
-import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
-import cn.afterturn.easypoi.excel.entity.params.ExcelExportEntity;
-import cn.afterturn.easypoi.test.entity.MsgClient;
-import cn.afterturn.easypoi.test.entity.MsgClientGroup;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/EasypoiSingleExcelViewTest")
@@ -54,8 +44,10 @@ public class EasypoiSingleExcelViewTest {
 
     }
 
-    /**如果上面的方法不行,可以使用下面的用法
+    /**
+     * 如果上面的方法不行,可以使用下面的用法
      * 同样的效果,只不过是直接问输出了,不经过view了
+     *
      * @param map
      * @param request
      * @param response
